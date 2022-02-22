@@ -7,10 +7,9 @@ import Kreiraj from './components/Kreiraj';
 import Navbar from './components/Navbar';
 function App() {
   const [reci, setreci] = useState([])
-
   const kreiraj = (rec) => {
     setreci(prev => {
-      return [...prev, rec]
+      return [...prev, rec.toLocaleLowerCase()]
     })
   }
   return (
@@ -23,7 +22,6 @@ function App() {
           <Kreiraj kreiraj={kreiraj} reci={reci} />
         </Route>
         <Route path='/'>
-
           <Igra reci={reci} />
         </Route>
       </Switch>
